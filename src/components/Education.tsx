@@ -60,7 +60,7 @@ export default function Education() {
               {index < education.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2, textAlign: { xs: 'center', sm: 'left' } }}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+              <Typography variant="subtitle1" sx={{fontSize: '0.95rem', fontWeight: 600 }}>
                 {edu.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">

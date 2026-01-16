@@ -11,7 +11,7 @@ export default function Skills() {
       {/* header */}
       <Box sx={{ width: { sm: '100%', md: '60%' }, textAlign: { xs:'center' }, }} >
         <Typography component="h2" variant="h4" gutterBottom sx={{ color: 'text.primary' }} >
-          Skills
+          Technical Skills
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
           Quickly build an effective Skills table for your potential customers with
