@@ -7,7 +7,7 @@ import Features from './Features';
 
 export default function Skills() {
   return (
-    <Container id="skills" sx={{ pt: { xs: 8, sm: 12 }, pb: { xs: 8, sm: 16 }, position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: 3, sm: 6 }, }} >
+    <Container id="skills" sx={{ pt: { xs: 8, sm: 12 }, pb: { xs: 8, sm: 16 }, position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: 5 } }} >
       {/* header */}
       <Box sx={{ width: { sm: '100%', md: '60%' }, textAlign: { xs:'center' }, }} >
         <Typography component="h2" variant="h4" gutterBottom sx={{ color: 'text.primary' }} >

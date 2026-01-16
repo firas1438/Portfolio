@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard';
 
 export default function Projects() {
   return (
-    <Container id="projects" sx={{ pt: { xs: 8, sm: 12 }, pb: { xs: 8, sm: 16 }, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: 3, sm: 6 }, }} >
+    <Container id="projects" sx={{ pt: { xs: 8, sm: 12 }, pb: { xs: 8, sm: 16 }, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: 5 }, }} >
       {/* header */}
       <Box sx={{ width: { sm: '100%', md: '60%' }, textAlign: 'center' }}>
         <Typography component="h2" variant="h4" gutterBottom>
