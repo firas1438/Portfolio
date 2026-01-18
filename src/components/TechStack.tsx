@@ -97,9 +97,12 @@ export function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeatu
 
   return (
     <Box sx={{ display: { xs: 'flex', sm: 'none' }, flexDirection: 'column', gap: 2, }} >
-      <Box sx={{ display: 'flex', gap: 2, overflow: 'auto' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '100%' }}>
         {items.map(({ title }, index) => (
-          <Chip size="medium" key={index} label={title} onClick={() => handleItemClick(index)} selected={selectedItemIndex === index} />
+          <Chip 
+            size="medium" key={index} label={title} onClick={() => handleItemClick(index)} selected={selectedItemIndex === index}
+            sx={{ width: '100%', display: 'flex', '& .MuiChip-label': { width: '100%', textAlign: 'center' } }} 
+          />
         ))}
       </Box>
       
@@ -142,7 +145,7 @@ export function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeatu
 }
 
 {/* desktop layout */}
-export default function Features() {
+export default function TechStack() {
   const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
 
   const handleItemClick = (index: number) => {

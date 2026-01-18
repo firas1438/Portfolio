@@ -28,8 +28,8 @@ export default function Contact() {
       <Grid container spacing={3} sx={{ width: '100%', justifyContent: 'center', alignItems: 'stretch' }} >
 
         {/* column 1 */}
-        <Grid size={{ xs: 12, sm: 7 }} sx={{ display: 'flex', bgcolor: alpha('#415ce0', 0.01), borderRadius: 3, }}>
-          <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: alpha('#415ce0', 0.09), borderRadius: 3, bgcolor: 'transparent' }} >
+        <Grid size={{ xs: 12, sm: 7 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
+          <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: 'background.paper', borderRadius: 3, bgcolor: 'transparent' }} >
             {/* header */}
             <Box sx={{ mb: 3 }}>
               <Typography variant="h6" sx={{ fontWeight: 700, color: '#415ce0' }}>
@@ -45,8 +45,8 @@ export default function Contact() {
         </Grid>
 
         {/* column 2 */}
-        <Grid size={{ xs: 12, sm: 5 }} sx={{ display: 'flex', bgcolor: alpha('#415ce0', 0.01), borderRadius: 3, }}>
-          <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: alpha('#415ce0', 0.09), borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }} >
+        <Grid size={{ xs: 12, sm: 5 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
+          <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: 'background.paper', borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }} >
             {/* header */}
             <Box sx={{ mb: 3 }}>
               <Typography variant="h6" sx={{ fontWeight: 700, color: '#415ce0' }}>
@@ -57,7 +57,7 @@ export default function Contact() {
               </Typography>
             </Box>
             {/* additional info */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3.5 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               {[
                 { icon: <MailOutlineIcon fontSize="small" />, label: 'Email', value: 'benalifiras1438@gmail.com' },
                 { icon: <PhoneIphoneIcon fontSize="small" />, label: 'Phone', value: '+216 22 047 988' },

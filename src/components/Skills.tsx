@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Features from './Features';
+import TechStack from './TechStack';
 
 
 export default function Skills() {
@@ -23,7 +23,7 @@ export default function Skills() {
 
       {/* content */}
       <Grid container spacing={3} sx={{ alignItems: 'center', justifyContent: 'center', width: '100%' }} >
-        <Features/>
+        <TechStack />
       </Grid>
     </Container>
   );

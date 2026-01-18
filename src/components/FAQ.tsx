@@ -36,7 +36,7 @@ const faqs = [
 export default function FAQ() {
   const [expanded, setExpanded] = React.useState<string[]>([]);
 
-  const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpanded( isExpanded ? [...expanded, panel] : expanded.filter((item) => item !== panel) );
   };
 

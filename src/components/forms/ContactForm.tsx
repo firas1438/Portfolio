@@ -4,13 +4,15 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { alpha } from '@mui/material/styles';
+import SendIcon from '@mui/icons-material/Send';
+
 
 export default function ContactForm() {
 
   const standardFieldStyles = {
-    '& .MuiInput-root': { bgcolor: alpha('#415ce0', 0.04), borderRadius: 1.5, px: 1.5, py: 0.5, transition: 'all 0.2s ease-in-out',
-      '&::before, &::after': { display: 'none' }, '&:hover': { bgcolor: alpha('#415ce0', 0.08), },
-      '&.Mui-focused': { bgcolor: alpha('#415ce0', 0.02), boxShadow: `0 0 0 2px ${'#415ce0'}`, },
+    '& .MuiInput-root': { bgcolor: 'background.paper', borderRadius: 1.5, px: 1.5, py: 0.5, transition: 'all 0.2s ease-in-out',
+      '&::before, &::after': { display: 'none' }, '&:hover': { bgcolor: alpha('#0c1117', 0.5), },
+      '&.Mui-focused': { bgcolor: alpha('#415ce0', 0.02), boxShadow: `0 0 0 1.5px ${'#415ce0'}`, },
     },
   };
 
@@ -52,9 +54,13 @@ export default function ContactForm() {
       </Box>
 
       {/* submit button */}
-      <Button type="submit" size="large" fullWidth sx={{fontSize:'0.8rem', py: 1.5, mt:1, bgcolor: alpha('#415ce0', 0.05)}} >
+      <Button
+        type="submit" size="large" fullWidth startIcon={<SendIcon/>}
+        sx={{ fontSize: '0.8rem', py: 1.5, mt: 1, bgcolor: 'background.paper', }}
+      >
         Send Message
       </Button>
+
 
     </Box>
   );

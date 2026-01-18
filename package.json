@@ -14,8 +14,15 @@
     "@mui/lab": "^7.0.1-beta.21",
     "@mui/material": "latest",
     "@mui/utils": "latest",
+    "@tabler/icons-react": "^3.36.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.26.2",
+    "motion": "^12.26.2",
     "react": "latest",
     "react-dom": "latest",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18",
     "typescript": "latest"
   },
   "devDependencies": {

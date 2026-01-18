@@ -19,17 +19,17 @@ export default function Education() {
     {
       title: 'Software Engineering Degree',
       period: 'Sep 2024 – Jun 2027 (Expected)',
-      school: 'Higher Institute of Informatics and Mathematics of Monastir, Tunisia',
+      school: 'Higher Institute of Computer Science and Mathematics of Monastir, Tunisia',
       icon: <SchoolIcon />,
     },
     {
       title: 'Preparatory Cycle in Engineering',
       period: 'Sep 2022 – Jun 2024',
-      school: 'Higher Institute of Informatics and Mathematics of Monastir, Tunisia',
+      school: 'Higher Institute of Computer Science and Mathematics of Monastir, Tunisia',
       icon: <AccountBalanceIcon />,
     },
     {
-      title: 'Baccalaureate in Technical Sciences',
+      title: 'Baccalaureate in Technological Sciences',
       period: 'Sep 2018 – Jun 2022',
       school: 'Hammam Sousse 2 Secondary High School, Tunisia',
       icon: <SettingsIcon />,

@@ -23,7 +23,7 @@ export default function Achievements() {
 
       {/* content */}
       <Grid container spacing={3} sx={{ alignItems: 'center', justifyContent: 'center', width: '100%' }} >
-        <CodeSnippet/>
+        {/* <CodeSnippet/> */}
       </Grid>
     </Container>
   );

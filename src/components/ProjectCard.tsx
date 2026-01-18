@@ -1,6 +1,5 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -26,7 +25,12 @@ export default function ProjectCard({ image, title, description, tags, githubUrl
       {/* image*/}
       <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: 1, '&:hover .image-overlay': { opacity: 1 }, }} >
         
-        <CardMedia component="img" height="190" image={image} alt={title} sx={{ display: 'block', transition: 'transform 0.4s ease' }} />
+        <Box
+          component="img" src={image} alt={title}
+          sx={{ display: 'block', width: '100%', height: '200px',
+            objectFit: 'cover', transition: 'transform 0.4s ease', }}
+        />
+
 
         {/* icons */}
         <Box className="image-overlay"
