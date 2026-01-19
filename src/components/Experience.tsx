@@ -23,18 +23,16 @@ export default function Experience() {
       <Grid container rowSpacing={{ xs: 4, sm: 4 }} sx={{ alignItems: 'center', justifyContent: 'center', width: '100%', }}>
 
         <InternshipCard
-          logo="https://i.imgur.com/jPfRAJC.png"
+          logo="https://i.imgur.com/QBi0TvM.png"
           company="ConvergeINNOV"
-          color="#c269bc"
           role="Software Engineering Intern"
           period="Jun 2025 – Jul 2025"
           description="Built Next.js dashboards, integrated REST APIs, and improved the startup's visibility."
         />
 
         <InternshipCard
-          logo="https://i.imgur.com/fietHtg.png"
+          logo="https://i.imgur.com/law0oi0.png"
           company="Freelance"
-          color="#6fdb44"
           role="Fullstack Developer"
           period="2024 – Present"
           description="Delivered modern, maintainable software solutions for multiple clients."

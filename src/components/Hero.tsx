@@ -54,9 +54,14 @@ export default function Hero() {
             <Button variant="contained" color="primary" size="medium" href="#projects" >
               View Projects
             </Button>
-            <Button variant="outlined" color="primary" size="medium" href="/FirasBenAli_Resume.pdf" target="_blank" rel="noopener noreferrer" >
+
+            <Button variant="outlined" color="primary" size="medium" href="/CV_FirasBenAli.pdf" download="FirasBenAli_Resume.pdf" >
               Download Resume
             </Button>
+
+            {/* <Button variant="outlined" color="primary" size="medium" href="/CV_FirasBenAli.pdf" target="_blank" rel="noopener noreferrer" >
+              View Resume
+            </Button> */}
           </Stack>
           
           <Typography variant="caption" color="text.secondary" sx={{ textAlign: 'center', pt: 1.5 }} >

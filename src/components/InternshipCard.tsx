@@ -8,14 +8,13 @@ import Box from "@mui/material/Box";
 interface InternshipCardProps {
   logo: string;
   company: string;
-  color: string;
   role: string;
   period: string;
   description: string;
   link?: string;
 }
 
-export default function InternshipCard({ logo, company, color, role, period, description, link, }: InternshipCardProps) {
+export default function InternshipCard({ logo, company, role, period, description, link, }: InternshipCardProps) {
   return (
     <Card
       sx={(theme) => ({
@@ -29,17 +28,14 @@ export default function InternshipCard({ logo, company, color, role, period, des
       <CardMedia
         image={logo}
         sx={(theme) => ({
-          width: "100%",
-          minHeight: 180,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
+          width: "100%", minHeight: 180, backgroundSize: "contain", backgroundPosition: "center",
           [theme.breakpoints.up("md")]: { width: 180, minHeight: "100%" },
         })}
       />
 
       <CardContent sx={{ flex: 1 }}>
         <Box sx={{ mb: 1 }}>
-          <Typography variant="caption" sx={{ textTransform: "uppercase", letterSpacing: "0.08em", color: {color}, fontWeight: 600 }} >
+          <Typography variant="caption" sx={{ textTransform: "uppercase", letterSpacing: "0.08em", color: '#415ce0', fontWeight: 600 }} >
             {company}
           </Typography>
         </Box>
