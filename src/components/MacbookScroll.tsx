@@ -2,44 +2,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 import { cn } from "../lib/utils";
-import { IconBrightnessDown, IconBrightnessUp, IconChevronUp, IconMicrophone, IconMoon, IconPlayerSkipForward,
-  IconPlayerTrackNext, IconPlayerTrackPrev, IconTable, IconVolume, IconVolume2, IconVolume3, IconSearch,
-  IconWorld, IconCommand, IconCaretRightFilled, IconCaretUpFilled, IconCaretLeftFilled, IconCaretDownFilled,
-} from "@tabler/icons-react";
-
-export const MacbookScroll = ({ src, badge }: { src?: string; badge?: React.ReactNode }) => {
+import { IconBrightnessDown, IconBrightnessUp, IconCaretRightFilled, IconCaretUpFilled, IconChevronUp, 
+  IconMicrophone, IconMoon, IconPlayerSkipForward, IconPlayerTrackNext, IconPlayerTrackPrev, IconTable,
+  IconVolume, IconVolume2, IconVolume3, } from "@tabler/icons-react";
+import { IconSearch } from "@tabler/icons-react";
+import { IconWorld } from "@tabler/icons-react";
+import { IconCommand } from "@tabler/icons-react";
+import { IconCaretLeftFilled } from "@tabler/icons-react";
+import { IconCaretDownFilled } from "@tabler/icons-react";
+ 
+ 
+export const MacbookScroll = ({ src, badge, }: { src?: string; title?: string | React.ReactNode; badge?: React.ReactNode; }) => {
+  
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"], });
+ 
   const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setIsMobile(true);
-    }
-  }, []);
-
-  const scaleX = useTransform(scrollYProgress, [0, 0.3], [1.2, isMobile ? 1 : 1.5]);
-  const scaleY = useTransform(scrollYProgress, [0, 0.3], [0.6, isMobile ? 1 : 1.5]);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  useEffect(() => { if (window && window.innerWidth < 768) { setIsMobile(true); } }, []);
+ 
+  const scaleX = useTransform( scrollYProgress, [0, 0.3], [1.2, isMobile ? 1 : 1.5], );
+  const scaleY = useTransform( scrollYProgress, [0, 0.3], [0.6, isMobile ? 1 : 1.5], );
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
-
+ 
   return (
-    <div
-      ref={ref}
-      className="flex shrink-0 flex-col items-center justify-start perspective-midrange [zoom:0.36] sm:[zoom:0.7] md:[zoom:0.8] lg:[zoom:1] 
-      pt-36 pb-12 sm:pt-14 md:pb-16 lg:pt-10 w-full px-4 "
+    <div ref={ref}
+      className="flex shrink-0 transform flex-col items-center justify-start py-0 md:py-10 perspective-midrange scale-[0.36] sm:scale-[0.7] md:scale-[0.8] lg:scale-100 transition-all duration-300"
     >
-      {/* Lid Wrapper - Responsive Width */}
-      <div className="w-full max-w-xl">
-        <Lid src={src} scaleX={scaleX} scaleY={scaleY} rotate={rotate} translate={translate} />
-      </div>
 
-      {/* Base area - Width fixed to responsive w-full max-w-xl */}
-      <div className="relative -z-10 h-88 w-full max-w-xl overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+      {/* Lid */}
+      <Lid src={src} scaleX={scaleX} scaleY={scaleY} rotate={rotate} translate={translate} />
+      {/* Base area */}
+      <div className="relative -z-10 h-88 w-xl overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+        {/* above keyboard bar */}
         <div className="relative h-10 w-full">
           <div className="absolute inset-x-0 mx-auto h-4 w-[80%] bg-[#050505]" />
         </div>
@@ -61,32 +56,22 @@ export const MacbookScroll = ({ src, badge }: { src?: string; badge?: React.Reac
     </div>
   );
 };
-
-export const Lid = ({
-  scaleX,
-  scaleY,
-  rotate,
-  translate,
-  src,
-}: {
-  scaleX: MotionValue<number>;
-  scaleY: MotionValue<number>;
-  rotate: MotionValue<number>;
-  translate: MotionValue<number>;
-  src?: string;
-}) => {
+ 
+export const Lid = ({ scaleX, scaleY, rotate, translate, src, }: { scaleX: MotionValue<number>; scaleY: MotionValue<number>; rotate: MotionValue<number>; translate: MotionValue<number>; src?: string; }) => {
   return (
-    <div className="relative perspective-midrange w-full">
+    <div className="relative perspective-midrange">
       <div
         style={{
           transform: "perspective(800px) rotateX(-25deg) translateZ(0px)",
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
-        className="relative h-48 w-full rounded-2xl bg-[#010101] p-2"
+        className="relative h-48 w-xl rounded-2xl bg-[#010101] p-2"
       >
         <div
-          style={{ boxShadow: "0px 2px 0px 2px #171717 inset" }}
+          style={{
+            boxShadow: "0px 2px 0px 2px #171717 inset",
+          }}
           className="absolute inset-0 flex items-center justify-center rounded-lg bg-[#010101]"
         >
           <span className="text-white">
@@ -95,27 +80,20 @@ export const Lid = ({
         </div>
       </div>
       <motion.div
-        style={{
-          scaleX: scaleX,
-          scaleY: scaleY,
-          rotateX: rotate,
-          translateY: translate,
-          transformStyle: "preserve-3d",
-          transformOrigin: "top",
-        }}
-        className="absolute inset-0 h-96 w-full rounded-2xl bg-[#010101] p-2"
+        style={{ scaleX: scaleX, scaleY: scaleY, rotateX: rotate, translateY: translate, transformStyle: "preserve-3d", transformOrigin: "top", }}
+        className="absolute inset-0 h-96 w-xl rounded-2xl bg-[#010101] p-2"
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         <img
           src={src as string}
-          alt="logo"
+          alt="aceternity logo"
           className="absolute inset-0 h-full w-full rounded-lg object-cover object-top-left"
         />
       </motion.div>
     </div>
   );
 };
-
+ 
 export const Trackpad = () => {
   return (
     <div
@@ -126,16 +104,13 @@ export const Trackpad = () => {
     ></div>
   );
 };
-
+ 
 export const Keypad = () => {
   return (
-    <div className="mx-1 h-full transform-[translateZ(0)] rounded-xl bg-[#050505] p-2 will-change-transform flex flex-col justify-center">      {/* First Row */}
+    <div className="mx-1 h-full transform-[translateZ(0)] rounded-xl bg-[#050505] p-2 will-change-transform flex flex-col justify-center"> 
       {/* First Row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
-        <KBtn
-          className="w-10 items-end justify-start pb-0.5 pl-1"
-          childrenClassName="items-start"
-        >
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
+        <KBtn className="w-10 items-end justify-start pb-0.5 pl-1" childrenClassName="items-start" >
           esc
         </KBtn>
         <KBtn>
@@ -192,9 +167,9 @@ export const Keypad = () => {
           </div>
         </KBtn>
       </div>
-
+ 
       {/* Second row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
         <KBtn>
           <span className="block">~</span>
           <span className="mt-1 block">`</span>
@@ -254,9 +229,9 @@ export const Keypad = () => {
           delete
         </KBtn>
       </div>
-
+ 
       {/* Third row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
         <KBtn
           className="w-10 items-end justify-start pb-0.5 pl-1"
           childrenClassName="items-start"
@@ -306,9 +281,9 @@ export const Keypad = () => {
           <span className="block">{`\\`}</span>
         </KBtn>
       </div>
-
+ 
       {/* Fourth Row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
         <KBtn
           className="w-[2.8rem] items-end justify-start pb-0.5 pl-1"
           childrenClassName="items-start"
@@ -357,9 +332,9 @@ export const Keypad = () => {
           return
         </KBtn>
       </div>
-
+ 
       {/* Fifth Row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
         <KBtn
           className="w-[3.65rem] items-end justify-start pb-0.5 pl-1"
           childrenClassName="items-start"
@@ -406,9 +381,9 @@ export const Keypad = () => {
           shift
         </KBtn>
       </div>
-
+ 
       {/* sixth Row */}
-      <div className="mb-0.5 flex w-full shrink-0 gap-0.5 justify-center">
+      <div className="mb-0.5 flex w-full shrink-0 gap-1 justify-center">
         <KBtn className="" childrenClassName="h-full justify-between py-[4px]">
           <div className="flex w-full justify-end pr-1">
             <span className="block">fn</span>
@@ -484,7 +459,7 @@ export const Keypad = () => {
     </div>
   );
 };
-
+ 
 export const KBtn = ({
   className,
   children,
@@ -526,11 +501,11 @@ export const KBtn = ({
     </div>
   );
 };
-
+ 
 export const SpeakerGrid = () => {
   return (
     <div
-      className="mt-2 flex h-40 gap-0.5 px-[0.5px]"
+      className="mt-2 flex h-40 gap-1 px-[0.5px]"
       style={{
         backgroundImage:
           "radial-gradient(circle, #08080A 0.5px, transparent 0.5px)",
@@ -539,7 +514,7 @@ export const SpeakerGrid = () => {
     ></div>
   );
 };
-
+ 
 export const OptionKey = ({ className }: { className: string }) => {
   return (
     <svg
@@ -573,7 +548,7 @@ export const OptionKey = ({ className }: { className: string }) => {
     </svg>
   );
 };
-
+ 
 const AceternityLogo = () => {
   return (
     <svg
