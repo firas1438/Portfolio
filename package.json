@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
@@ -23,7 +24,8 @@
     "react-dom": "latest",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
-    "typescript": "latest"
+    "typescript": "latest",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@types/react": "latest",

@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded'; 
+import LayersRoundedIcon from '@mui/icons-material/LayersRounded';     
+import StorageRoundedIcon from '@mui/icons-material/StorageRounded';   
 
 {/* tech stack */}
 const techStackData = {
@@ -45,19 +45,19 @@ const techStackData = {
 {/* categories */}
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
+    icon: <LayersRoundedIcon />,
     title: 'Frameworks & Libraries',
     description: 'Modern frameworks and libraries for building scalable applications.',
     category: 'frameworks',
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
+    icon: <TerminalRoundedIcon />,
     title: 'Languages',
     description: 'Programming languages I work with for different types of projects.',
     category: 'languages',
   },
   {
-    icon: <DevicesRoundedIcon />,
+    icon: <StorageRoundedIcon />,
     title: 'Databases & Tools',
     description: 'Database systems, ORMs, and development tools for efficient workflow.',
     category: 'databases',

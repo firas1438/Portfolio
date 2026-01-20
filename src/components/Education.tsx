@@ -54,7 +54,7 @@ export default function Education() {
         {education.map((edu, index) => (
           <TimelineItem key={index} sx={{ minHeight: 140 }}>
             <TimelineSeparator>
-              <TimelineDot sx={{ bgcolor: '#415ce0', color: '#e8e8e8' }}>
+              <TimelineDot sx={{ bgcolor: '#1a36bf', color: '#e8e8e8' }}>
                 {edu.icon}
               </TimelineDot>
               {index < education.length - 1 && <TimelineConnector />}
