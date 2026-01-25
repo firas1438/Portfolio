@@ -10,8 +10,8 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import SchoolIcon from '@mui/icons-material/School';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import SettingsIcon from '@mui/icons-material/Settings';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 
 export default function Education() {

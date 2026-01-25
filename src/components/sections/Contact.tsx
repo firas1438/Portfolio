@@ -2,14 +2,14 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import ContactForm from './forms/ContactForm';
+import ContactForm from '../forms/ContactForm';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { alpha } from '@mui/material/styles';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 export default function Contact() {
 

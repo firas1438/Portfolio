@@ -10,9 +10,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import ColorModeIconDropdown from '.././theme/ColorModeIconDropdown';
-import PortfolioIcon from './PortfolioIcon';
-import MotionWrapper from './ui/MotionWrapper';
+import ColorModeIconDropdown from '../../theme/ColorModeIconDropdown';
+import PortfolioIcon from '../PortfolioIcon';
+import MotionWrapper from '../ui/MotionWrapper';
+
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -30,7 +31,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   padding: '8px 12px',
 }));
 
-export default function AppAppBar() {
+export default function Navbar() {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen: boolean) => () => setOpen(newOpen);
 

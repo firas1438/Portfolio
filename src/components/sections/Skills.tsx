@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import TechStack from './TechStack';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import TechStack from '../TechStack';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 
 export default function Skills() {

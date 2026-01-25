@@ -7,8 +7,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 // faq list
 const faqs = [

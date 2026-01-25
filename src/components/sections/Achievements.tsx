@@ -5,8 +5,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 // achievements data
 const achievements = [

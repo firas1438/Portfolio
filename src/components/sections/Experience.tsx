@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import InternshipCard from './InternshipCard';
-import Title from './Title';
-import MotionWrapper from './ui/MotionWrapper';
+import InternshipCard from '../InternshipCard';
+import Title from '../Title';
+import MotionWrapper from '../ui/MotionWrapper';
 
 
 export default function Experience() {

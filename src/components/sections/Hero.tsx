@@ -4,9 +4,9 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { MacbookScroll } from './MacbookScroll';
-import ShinyText from './ui/ShinyText';
-import MotionWrapper from './ui/MotionWrapper';
+import { MacbookScroll } from '../MacbookScroll';
+import ShinyText from '../ui/ShinyText';
+import MotionWrapper from '../ui/MotionWrapper';
 
 
 export default function Hero() {

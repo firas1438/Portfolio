@@ -9,8 +9,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PortfolioIcon from './PortfolioIcon';
-import MotionWrapper from './ui/MotionWrapper';
+import PortfolioIcon from '../PortfolioIcon';
+import MotionWrapper from '../ui/MotionWrapper';
 
 export default function Footer() {
   return (
