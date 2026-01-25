@@ -21,7 +21,7 @@ export default function MainPage(props: { disableCustomTheme?: boolean }) {
       {/* body */}
       <Hero />
       <Divider />
-      <div>
+      <div className='p-4 sm:p-0'>
         <Education />
         <Divider />
         <Experience />

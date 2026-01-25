@@ -66,26 +66,23 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src, }: { scaleX: Motio
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
-        className="relative h-48 w-xl rounded-2xl bg-[#010101] p-2"
+        className="relative h-48 w-xl rounded-2xl p-2" // bg-[#010101]
       >
         <div
           style={{
             boxShadow: "0px 2px 0px 2px #171717 inset",
           }}
-          className="absolute inset-0 flex items-center justify-center rounded-lg bg-[#010101]"
+          className="absolute inset-0 flex items-center justify-center rounded-lg " // bg-[#010101]
         >
         </div>
       </div>
       <motion.div
         style={{ scaleX: scaleX, scaleY: scaleY, rotateX: rotate, translateY: translate, transformStyle: "preserve-3d", transformOrigin: "top", }}
-        className="absolute inset-0 h-96 w-xl rounded-2xl bg-[#010101] p-2"
+        className="absolute inset-0 h-96 w-xl rounded-2xl p-2" // bg-[#010101]
       >
-        <div className="absolute inset-0 rounded-lg bg-[#272729]" />
-        <img
-          src={src as string}
-          alt="logo"
-          className="absolute inset-0 h-full w-full rounded-lg object-cover object-top-left"
+        <div className="absolute inset-0 rounded-lg" // bg-[#272729]
         />
+        <img src={src as string} alt="logo" className="absolute inset-0 h-full w-full rounded-lg object-cover object-top-left" />
       </motion.div>
     </div>
   );
