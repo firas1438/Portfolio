@@ -7,6 +7,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid';
+import Title from './Title';
+import MotionWrapper from './ui/MotionWrapper';
 
 // faq list
 const faqs = [
@@ -45,36 +47,37 @@ export default function FAQ() {
       
       {/* header */}
       <Box sx={{ width: { sm: '100%', md: '60%' }, textAlign: { xs:'center' }, }} >
-        <Typography component="h2" variant="h4" gutterBottom sx={{ color: 'text.primary' }} >
-          Questions & Answers
-        </Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          Find answers to common questions about my skills, experience, and availability. 
-        </Typography>
+        <Title
+            title="FAQ"
+            heading="Frequently Asked Questions"
+            description="Find answers to common questions about my skills, experience, and availability."
+        />
       </Box>
 
       {/* content */}
-      <Grid container spacing={3} sx={{ alignItems: 'center', justifyContent: 'center', width: '100%' }} >
-        <Box sx={{ width: '100%' }}>
-          {faqs.map((faq, index) => {
-            const panelId = `panel${index + 1}`;
-            return (
-              <Accordion key={panelId} expanded={expanded.includes(panelId)} onChange={handleChange(panelId)} >
-                <AccordionSummary expandIcon={<ExpandMoreIcon />} id={`${panelId}-header`}>
-                  <Typography component="span" variant="subtitle2">
-                    {faq.question}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography variant="body2" sx={{ maxWidth: { sm: '100%', md: '70%' } }}>
-                    {faq.answer}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            );
-          })}
-        </Box>
-      </Grid>
+      <MotionWrapper variant='slideUp' delay={0.3}>
+        <Grid container spacing={3} sx={{ alignItems: 'center', justifyContent: 'center', width: '100%' }} >
+          <Box sx={{ width: '100%' }}>
+            {faqs.map((faq, index) => {
+              const panelId = `panel${index + 1}`;
+              return (
+                <Accordion key={panelId} expanded={expanded.includes(panelId)} onChange={handleChange(panelId)} >
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />} id={`${panelId}-header`}>
+                    <Typography component="span" variant="subtitle2">
+                      {faq.question}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography variant="body2" sx={{ maxWidth: { sm: '100%', md: '70%' } }}>
+                      {faq.answer}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              );
+            })}
+          </Box>
+        </Grid>
+      </MotionWrapper>
 
     </Container>
   );

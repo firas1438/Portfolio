@@ -71,7 +71,7 @@ const Chip = styled(MuiChip)<ChipProps>(({ theme }) => ({
     {
       props: ({ selected }) => !!selected,
       style: {
-        background: 'linear-gradient(to bottom right, hsl(210, 98%, 48%), hsl(210, 98%, 35%))',
+        background: 'linear-gradient(to bottom right, #1a36bf, #12247f)',
         color: 'hsl(0, 0%, 100%)',
         borderColor: (theme.vars || theme).palette.primary.light, '& .MuiChip-label': { color: 'hsl(0, 0%, 100%)', },
         ...theme.applyStyles('dark', { borderColor: (theme.vars || theme).palette.primary.dark, }),
@@ -110,8 +110,7 @@ export function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeatu
         <Box sx={{ p: 3 }}>
           <Stack direction="row" flexWrap="wrap" gap={2} justifyContent="center" sx={{ mb: 2, minHeight: 200 }} >
             {currentItems.map((tech, index) => (
-              <Card 
-                key={index} variant="outlined"
+              <Card key={index} variant="outlined"
                 sx={(theme) => ({
                   width: 80, height: 80, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 1.5, borderRadius: 2,
                   background: theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)',
@@ -119,10 +118,7 @@ export function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeatu
                   borderColor: theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)',
                 })}
               >
-                <Box
-                  component="img" src={tech.icon} alt={tech.name}
-                  sx={{ width: 40, height: 40, objectFit: 'contain', mb: 0.5, }}
-                />
+                <Box component="img" src={tech.icon} alt={tech.name} sx={{ width: 40, height: 40, objectFit: 'contain', mb: 0.5, }} />
                 <Typography variant="caption" sx={{ textAlign: 'center', fontWeight: 500, fontSize: '0.7rem' }}>
                   {tech.name}
                 </Typography>
@@ -139,6 +135,7 @@ export function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeatu
             {selectedFeature.description}
           </Typography>
         </Box>
+        
       </Card>
     </Box>
   );

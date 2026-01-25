@@ -5,6 +5,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import Title from './Title';
+import MotionWrapper from './ui/MotionWrapper';
 
 // achievements data
 const achievements = [
@@ -20,7 +22,7 @@ const achievements = [
     title: '1st Place – Intern Explorer Hackathon',
     organizer: 'CPU Club',
     location: 'ISIMM, Monastir',
-    description: 'Built a professional website for a growing tech company to establish their online presence.',
+    description: 'Designed and developed a professional website for a growing tech company, helping them establish a strong online presence.',
     tags: ['Web Development', '3D'],
     poster: 'https://i.imgur.com/dOylQLb.jpeg',
   },
@@ -49,54 +51,50 @@ export default function Achievements() {
       
       {/* header */}
       <Box sx={{ maxWidth: 700, textAlign: 'center', }} >
-        <Typography variant="h4" gutterBottom>
-          Achievements
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          A showcase of my accomplishments and milestones in my professional journey.
-        </Typography>
+        <Title
+            title="Achievements"
+            heading="Awards & Accomplishements"
+            description="Highlights of hackathons and projects where I received awards and recognition."
+        />
       </Box>
 
       {/* grid */}
-      <Box sx={{ width: '100%', display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', }, gap: 3, }} >
-        
-        {achievements.map((achievement, index) => (
-          <Card key={index} sx={{ 
-            height: '100%', borderRadius: 3, transition: 'transform 0.3s ease', 
-            '&:hover': { transform: 'translateY(-6px)' }, 
-            position: 'relative', overflow: 'hidden',
-            '&::before': {
-              content: '""', position: 'absolute', top: 0, right: 0, width: '55%', height: '100%',
-              backgroundImage: `url(${achievement.poster})`,
-              backgroundSize: 'cover', backgroundPosition: 'center',
-              opacity: 0.2, pointerEvents: 'none', filter: 'blur(2px)', 
-              maskImage: 'linear-gradient(to left, black 10%, transparent 100%)',
-            }
-          }} >
-            <CardContent sx={{ position: 'relative', zIndex: 1 }}>
-              
-              <Typography variant="subtitle2" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', mb: 0.5, color: '#415ce0' }} >
-                {achievement.title}
-              </Typography>
+      <MotionWrapper variant='rotateIn' delay={0.3}>
+        <Box sx={{ width: '100%', display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', }, gap: 3, }} >
+          
+          {achievements.map((achievement, index) => (
+            <Card key={index} sx={{ 
+              height: '100%', borderRadius: 3, transition: 'transform 0.3s ease', '&:hover': { transform: 'translateY(-6px)' }, 
+              position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, right: 0, width: '55%', height: '100%',
+                backgroundImage: `url(${achievement.poster})`, backgroundSize: 'cover', backgroundPosition: 'center',
+                opacity: 0.2, pointerEvents: 'none', filter: 'blur(2px)', maskImage: 'linear-gradient(to left, black 10%, transparent 100%)',
+              }}} 
+            >
+              <CardContent sx={{ position: 'relative', zIndex: 1 }}>
+                
+                <Typography variant="subtitle2" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', mb: 0.5, color: '#415ce0' }} >
+                  {achievement.title}
+                </Typography>
 
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                Organized by {achievement.organizer} • {achievement.location}
-              </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  Organized by {achievement.organizer} • {achievement.location}
+                </Typography>
 
-              <Typography variant="body2" sx={{ mb: 1.5 }}>
-                {achievement.description}
-              </Typography>
+                <Typography variant="body2" sx={{ mb: 1.5 }}>
+                  {achievement.description}
+                </Typography>
 
-              <Stack direction="row" spacing={0.5} useFlexGap flexWrap="wrap">
-                {achievement.tags.map((tag) => (
-                  <Chip key={tag} label={tag} size="small" variant="outlined" />
-                ))}
-              </Stack>
+                <Stack direction="row" spacing={0.5} useFlexGap flexWrap="wrap">
+                  {achievement.tags.map((tag) => (
+                    <Chip key={tag} label={tag} size="small" variant="outlined" />
+                  ))}
+                </Stack>
 
-            </CardContent>
-          </Card>
-        ))}
-      </Box>
+              </CardContent>
+            </Card>
+          ))}
+        </Box>
+      </MotionWrapper>
     </Container>
   );
 }

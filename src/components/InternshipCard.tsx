@@ -28,7 +28,7 @@ export default function InternshipCard({ logo, company, role, period, descriptio
       <CardMedia
         image={logo}
         sx={(theme) => ({
-          width: "100%", minHeight: 180, backgroundSize: "contain", backgroundPosition: "center",
+          width: "100%", minHeight: 100, backgroundSize: "contain", backgroundPosition: "center",
           [theme.breakpoints.up("md")]: { width: 180, minHeight: "100%" },
         })}
       />

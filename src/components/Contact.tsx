@@ -8,6 +8,8 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { alpha } from '@mui/material/styles';
+import Title from './Title';
+import MotionWrapper from './ui/MotionWrapper';
 
 export default function Contact() {
 
@@ -16,19 +18,17 @@ export default function Contact() {
       
       {/* header */}
       <Box sx={{ width: { sm: '100%', md: '60%' }, textAlign: { xs: 'center' } }}>
-        <Typography component="h2" variant="h4" gutterBottom sx={{ color: 'text.primary', fontWeight: 700 }}>
-          Contact
-        </Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          Feel free to reach out for collaborations or just a friendly hello!
-        </Typography>
+        <Title
+            title="Contact"
+            heading="Get In Touch"
+            description="Feel free to reach out for any collaborations, inquiries or just a friendly hello!"
+        />
       </Box>
 
       {/* content */}
       <Grid container spacing={3} sx={{ width: '100%', justifyContent: 'center', alignItems: 'stretch' }} >
-
         {/* column 1 */}
-        <Grid size={{ xs: 12, sm: 7 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
+        <Grid component={MotionWrapper} variant='slideRight' delay={0.3} size={{ xs: 12, sm: 7 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
           <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: 'background.paper', borderRadius: 3, bgcolor: 'transparent' }} >
             {/* header */}
             <Box sx={{ mb: 3 }}>
@@ -43,9 +43,8 @@ export default function Contact() {
             <ContactForm />
           </Box>
         </Grid>
-
         {/* column 2 */}
-        <Grid size={{ xs: 12, sm: 5 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
+        <Grid component={MotionWrapper} variant='slideLeft' delay={0.3} size={{ xs: 12, sm: 5 }} sx={{ display: 'flex', border: '1px solid', borderColor: alpha('#415ce0', 0.06), borderRadius: 3 }}>
           <Box sx={{ flex: 1, p: 4, border: '1px solid', borderColor: 'background.paper', borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }} >
             {/* header */}
             <Box sx={{ mb: 3 }}>
@@ -81,8 +80,8 @@ export default function Contact() {
             </Box>
           </Box>
         </Grid>
-
       </Grid>
+
     </Container>
   );
 }
